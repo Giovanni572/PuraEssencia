@@ -1,0 +1,14 @@
+﻿@model ProjetoPuraEssencia.Models.Usuario;
+
+<form asp-action="Login" method="post">
+	<div>
+		<label>E-mail:</label>
+		<input type="email" name="email" required/>
+	</div>
+	<div>
+		<label>Senha:</label>
+		<input type="password" name="senha" required/>
+	</div>
+	<button>Entrar</button>
+	<a asp-controller="Usuario" asp-action="Cadastro">Cadastrar-se</a>
+</form>

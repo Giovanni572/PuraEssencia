@@ -1,0 +1,45 @@
+﻿@model ProjetoPuraEssencia.Models.Usuario
+
+<form asp-action="Cadastro" method="post">
+    <div>
+        <label>Nome:</label>
+        <input type="text" name="nome" required />
+    </div>
+
+    <div>
+        <label>CPF:</label>
+        <input type="text" name="cpf" required />
+    </div>
+
+    <div>
+        <label>E-mail:</label>
+        <input type="email" name="email" required />
+    </div>
+
+    <div>
+        <label>Telefone:</label>
+        <input type="tel" name="telefone" required />
+    </div>
+
+    <div>
+        <label>Endereço:</label>
+        <input type="text" name="endereco" required />
+    </div>
+
+    <div>
+        <label>CEP:</label>
+        <input type="text" name="cep" required />
+    </div>
+
+    <div>
+        <label>Senha:</label>
+        <input type="password" name="senha" required />
+    </div>
+
+    <div>
+        <label>Confirmar Senha:</label>
+        <input type="password" name="confirmarsenha" required />
+    </div>
+
+    <button type="submit">Cadastrar</button>
+</form>
