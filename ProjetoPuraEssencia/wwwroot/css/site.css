@@ -22,5 +22,27 @@ body {
 }
 header {
     margin-bottom: 20px;
-    background-color: #258cfb;
+    background-color: #00ff21;
+}
+
+.navbar {
+    /* Define o verde escuro como cor de fundo */
+    background-color: #0f4424;
+}
+
+    /* Altera a cor do texto do link e da marca para branco (para contraste) */
+    .navbar .nav-link,
+    .navbar-brand {
+        color: #ffffff;
+    }
+
+        /* Opcional: Garante que os links permaneçam brancos no hover/foco */
+        .navbar .nav-link:hover,
+        .navbar .nav-link:focus {
+            color: #cccccc; /* Um cinza claro sutil para o efeito hover */
+        }
+
+
+footer {
+    background-color: #0f4424;
 }
