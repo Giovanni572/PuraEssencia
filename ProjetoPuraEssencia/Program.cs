@@ -1,7 +1,13 @@
+using ProjetoPuraEssencia.Repositorio;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+
+//injeção de dependencias
+builder.Services.AddScoped<UsuarioRepositorio>();
+builder.Services.AddScoped<ProdutoRepositorio>();
 
 var app = builder.Build();
 

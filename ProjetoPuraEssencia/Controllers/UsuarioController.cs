@@ -9,14 +9,14 @@ namespace ProjetoPuraEssencia.Controllers
 
         //construtor
         public UsuarioController(UsuarioRepositorio usuarioRepositorio)
-      
+
         {//instancia
             _usuarioRepositorio = usuarioRepositorio;
         }
         [HttpGet]
         public IActionResult Login()
         {
-                            
+
             return View();
         }
         [HttpPost]
@@ -25,18 +25,15 @@ namespace ProjetoPuraEssencia.Controllers
         public IActionResult Login(string email, string senha)
         {
             var usuario = _usuarioRepositorio.ObterUsuario(email);
-            if (usuario != null && usuario.senha == senha)
+            if (usuario != null && usuario.Senha == senha)
             {
                 // Lógica de autenticação bem-sucedida
                 return RedirectToAction("Index", "Home");
             }
+            // Lógica de autenticação falhou
             ModelState.AddModelError("", "Email ou senha Inválidos.");
+            ViewBag.Erro = "Email ou senha inválidos.";
             return View();
-            {
-                // Lógica de autenticação falhou
-                ViewBag.Erro = "Email ou senha inválidos.";
-                return View();
-            }
-
         }
+    }
 }
