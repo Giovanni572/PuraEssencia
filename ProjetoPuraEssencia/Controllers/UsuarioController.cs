@@ -28,11 +28,11 @@ namespace ProjetoPuraEssencia.Controllers
             if (usuario != null && usuario.Senha == senha)
             {
                 // Lógica de autenticação bem-sucedida
-                return RedirectToAction("Index", "Home");
+                return RedirectToAction("ListarProduto", "Produto");
             }
             // Lógica de autenticação falhou
             ModelState.AddModelError("", "Email ou senha Inválidos.");
-            ViewBag.Erro = "Email ou senha inválidos.";
+            
             return View();
         }
     }

@@ -2,9 +2,9 @@
 
 namespace ProjetoPuraEssencia.Controllers
 {
-    public class ProdutoController1 : Controller
+    public class ProdutoController : Controller
     {
-        public IActionResult Index()
+        public IActionResult ListarProduto()
         {
             return View();
         }
