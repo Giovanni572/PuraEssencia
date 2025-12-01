@@ -1,6 +1,4 @@
-﻿/* ================================================= */
-/* 🛑 PARTE 1: STICKY FOOTER (FORÇAR O RODAPÉ PARA BAIXO) */
-/* ================================================= */
+﻿
 
 html {
     /* Altura total e remover regras antigas de position */
@@ -12,25 +10,23 @@ body {
     display: flex;
     flex-direction: column;
     min-height: 100vh; /* Garante que o corpo tenha no mínimo a altura da tela */
-    margin: 0; /* Remove margem padrão */
+    margin: 0;
+    padding:0;/* Remove margem padrão */
 }
 
 /* O conteúdo principal deve consumir todo o espaço vertical livre */
-.main-content {
+.main {
     flex-grow: 1; /* O QUE FAZ O FOOTER SER EMPURRADO PARA O FUNDO */
 }
 
-/* ================================================= */
-/* 🛑 PARTE 2: ESTILIZAÇÃO E LAYOUT DE TRÊS COLUNAS */
-/* ================================================= */
 
 /* Estilo do elemento Footer em si */
 .site-footer {
-    background-color: #0f4424; /* Sua cor definida anteriormente */
+    background-color: #0f4424;
     color: #ecf0f1;
     padding: 30px 0 10px;
     font-family: Arial, sans-serif;
-    /* Remover 'position: relative' e 'margin-bottom' que estavam no body/html */
+    width: 100%; /* Garante que ele ocupe toda a largura */
 }
 
 /* Container que envolve as três colunas */
@@ -85,7 +81,31 @@ body {
     text-decoration: none;
     transition: color 0.3s;
 }
+/* ✅ NOVO BLOCO: Aplica Flexbox ao container para alinhar os links */
+.footer-central .social-links {
+    display: flex; /* CHAVE: Habilita o Flexbox para alinhamento horizontal */
+    flex-direction: row;
+    flex-wrap: wrap; /* CORREÇÃO PRINCIPAL: Permite que os itens quebrem a linha */
+    justify-content: center; /* Centraliza o conteúdo (agora os ícones na segunda linha) */
+    align-items: center; /* Alinha os ícones verticalmente */
+    gap: 15px; /* Espaçamento entre os ícones */
+    margin-top: 10px;
+}
 
+    /* Regra para garantir que o texto 'Nossas Redes Sociais' fique em sua própria linha */
+    .footer-central .social-links p {
+        width: 100%; /* Garante que o parágrafo ocupe a largura total */
+        text-align: center;
+        margin-bottom: 10px;
+    }
+
+    /* Estilo para as Imagens (Tamanho e Display) */
+    .footer-central .social-links img {
+        width: 35px; /* Tamanho fixo para ícones */
+        height: 35px;
+        object-fit: contain;
+       
+    }
     .footer-direito .social-links a:hover {
         color: #ecf0f1;
     }
@@ -98,38 +118,35 @@ body {
     
 }
 
-/* ================================================= */
-/* 🛑 OUTROS ESTILOS JÁ EXISTENTES (MANTIDOS AQUI) */
-/* ================================================= */
 
-header {
-        background-color: #0f4424;
-}
+
 
 /* Os estilos abaixo foram mantidos como estavam em seu código */
 .btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
       box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
 }
+
 .video-fundo {
-       
-    /* 1. CHAVE: Fixa o vídeo em relação à tela e não ao documento */
-        position: fixed !important;
-        top: 0;
-        left: 0;
-        width: 100%;
-    /* 2. OPÇÃO MAIS SEGURA: 100% da altura da viewport.
-       Se 100vh estiver causando problemas, tente 100% (dependendo do seu HTML/Body)
-       Vamos manter 100vh que é a mais indicada para fundos fixos. */
-        height: 100vh;
-        object-fit: cover;
-       
-    /* 3. CHAVE: Garante que o vídeo fique no fundo de TUDO */
-        z-index: -9999 !important; /* Usamos um z-index muito baixo para máxima prioridade no fundo */
+    /* 1. Fixa o vídeo em relação à tela (viewport) */
+    position: fixed;
+    top: 0;
+    left: 0;
+    /* 2. Garante que o container do vídeo cubra 100% da largura e altura da viewport */
+    width: 100vw;
+    height: 100vh;
+    /* 3. ESSENCIAL: Faz com que o conteúdo do vídeo cubra o container 
+       inteiro, cortando as bordas se necessário, mas sem deixar espaços vazios. */
+    object-fit: cover;
+    /* 4. Garante que o vídeo fique no fundo de TUDO */
+    z-index: -9999;
+    /* 5. (Opcional) Define um alinhamento caso object-fit não preencha totalmente */
+    object-position: center;
 }
 
+/* O código para o slideshow (ou qualquer outro conteúdo) pode permanecer o mesmo: */
 .slideShow {
-        margin-top: 500px;
-        width: 800px;
-        height: 600px;
-        margin-left: 25%;
+    margin-top: 500px;
+    width: 800px;
+    height: 600px;
+    margin-left: 25%;
 }
