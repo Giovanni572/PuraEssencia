@@ -1,48 +1,135 @@
-html {
-  font-size: 14px;
-}
-
-@media (min-width: 768px) {
-  html {
-    font-size: 16px;
-  }
-}
-
-.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
-  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
-}
+﻿/* ================================================= */
+/* 🛑 PARTE 1: STICKY FOOTER (FORÇAR O RODAPÉ PARA BAIXO) */
+/* ================================================= */
 
 html {
-  position: relative;
-  min-height: 100%;
+    /* Altura total e remover regras antigas de position */
+    height: 100%;
 }
 
 body {
-  margin-bottom: 60px;
-}
-header {
-    margin-bottom: 20px;
-    background-color: #00ff21;
-}
-
-.navbar {
-    /* Define o verde escuro como cor de fundo */
-    background-color: #0f4424;
+    /* CHAVES FLEXBOX PARA EMPURRAR O FOOTER */
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Garante que o corpo tenha no mínimo a altura da tela */
+    margin: 0; /* Remove margem padrão */
 }
 
-    /* Altera a cor do texto do link e da marca para branco (para contraste) */
-    .navbar .nav-link,
-    .navbar-brand {
-        color: #ffffff;
+/* O conteúdo principal deve consumir todo o espaço vertical livre */
+.main-content {
+    flex-grow: 1; /* O QUE FAZ O FOOTER SER EMPURRADO PARA O FUNDO */
+}
+
+/* ================================================= */
+/* 🛑 PARTE 2: ESTILIZAÇÃO E LAYOUT DE TRÊS COLUNAS */
+/* ================================================= */
+
+/* Estilo do elemento Footer em si */
+.site-footer {
+    background-color: #0f4424; /* Sua cor definida anteriormente */
+    color: #ecf0f1;
+    padding: 30px 0 10px;
+    font-family: Arial, sans-serif;
+    /* Remover 'position: relative' e 'margin-bottom' que estavam no body/html */
+}
+
+/* Container que envolve as três colunas */
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    /* CHAVES PARA MANTER LADO A LADO */
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 30px;
+    flex-wrap: nowrap; /* Impede a quebra de linha em telas pequenas */
+}
+
+/* Estilo de cada coluna (Largura 33.33%) */
+.footer-column {
+    flex: 1 1 33.33%;
+    width: 33.33%;
+    min-width: 0;
+}
+
+    .footer-column h3 {
+        color: #ecf0f1;
+        font-size: 1.2em;
+        margin-bottom: 15px;
+        border-bottom: 2px solid #3498db;
+        padding-bottom: 5px;
     }
 
-        /* Opcional: Garante que os links permane�am brancos no hover/foco */
-        .navbar .nav-link:hover,
-        .navbar .nav-link:focus {
-            color: #cccccc; /* Um cinza claro sutil para o efeito hover */
+/* Estilos específicos (Esquerda) */
+.footer-esquerdo ul {
+    list-style: none;
+    padding: 0;
+}
+
+    .footer-esquerdo ul li a {
+        color: #ecf0f1;
+        text-decoration: none;
+        transition: color 0.3s;
+    }
+
+        .footer-esquerdo ul li a:hover {
+            color: #ecf0f1;
         }
 
+/* Estilos específicos (Central e Direita) */
+.footer-central p,
+.footer-direito .social-links a {
+    line-height: 1.6;
+    color: #ecf0f1;
+    text-decoration: none;
+    transition: color 0.3s;
+}
 
-footer {
-    background-color: #0f4424;
+    .footer-direito .social-links a:hover {
+        color: #ecf0f1;
+    }
+
+/* Estilo da seção de direitos autorais */
+.footer-bottom {
+    text-align: center;
+    padding-top: 0px;
+    margin-top: 20px;
+    
+}
+
+/* ================================================= */
+/* 🛑 OUTROS ESTILOS JÁ EXISTENTES (MANTIDOS AQUI) */
+/* ================================================= */
+
+header {
+        background-color: #0f4424;
+}
+
+/* Os estilos abaixo foram mantidos como estavam em seu código */
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+      box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+.video-fundo {
+       
+    /* 1. CHAVE: Fixa o vídeo em relação à tela e não ao documento */
+        position: fixed !important;
+        top: 0;
+        left: 0;
+        width: 100%;
+    /* 2. OPÇÃO MAIS SEGURA: 100% da altura da viewport.
+       Se 100vh estiver causando problemas, tente 100% (dependendo do seu HTML/Body)
+       Vamos manter 100vh que é a mais indicada para fundos fixos. */
+        height: 100vh;
+        object-fit: cover;
+       
+    /* 3. CHAVE: Garante que o vídeo fique no fundo de TUDO */
+        z-index: -9999 !important; /* Usamos um z-index muito baixo para máxima prioridade no fundo */
+}
+
+.slideShow {
+        margin-top: 500px;
+        width: 800px;
+        height: 600px;
+        margin-left: 25%;
 }

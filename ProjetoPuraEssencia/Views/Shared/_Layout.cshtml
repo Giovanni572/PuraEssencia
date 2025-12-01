@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - ProjetoPuraEssencia</title>
+    <title>@ViewData["Title"] - Pura Essência</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/ProjetoPuraEssencia.styles.css" asp-append-version="true" />
@@ -12,7 +12,11 @@
     <header>
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
             <div class="container-fluid">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">ProjetoPuraEssencia</a>
+                
+                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">Pura Essência</a>
+               
+                
+                
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -36,9 +40,43 @@
         </main>
     </div>
 
-    <footer class="border-top footer text-muted">
-        <div class="container">
-            &copy; 2025 - ProjetoPuraEssencia - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+    <footer class="site-footer">
+        <div class="footer-container">
+            <div class="footer-column footer-esquerdo">
+                ### Navegação Rápida
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/about">Sobre Nós</a></li>
+                    <li><a href="/services">Serviços</a></li>
+                    <li><a href="/contact">Contato</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-column footer-central">
+                
+                <div class="social-links">
+                    <p>Nossas Redes Sociais</p>
+                    <a href="#"><i class="fab fa-facebook-f"></i> Facebook</a><br>
+                    <a href="#"><i class="fab fa-twitter"></i> Twitter</a><br>
+                    <a href="#"><i class="fab fa-linkedin-in"></i> LinkedIn</a>
+                </div>
+               
+            </div>
+
+            <div class="footer-column footer-direito">
+              <colspan>Pura Essência</colspan>
+                <p>
+                    R.Guiapa,678 Vila Leopoldina<br>
+                    Cep.05089-001 - São Paulo, SP, Brasil<br>
+                    Telefone:(12) 3456-7890<br>
+                    Email: puraessencia@puraessencia.com.br
+                </p>
+               
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; @DateTime.Now.Year Seu Site. Todos os direitos reservados.</p>
         </div>
     </footer>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
