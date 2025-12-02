@@ -5,6 +5,10 @@ html {
     height: 100%;
 }
 
+header {
+    background-color: #3A5D3E;
+}
+
 body {
     /* CHAVES FLEXBOX PARA EMPURRAR O FOOTER */
     display: flex;
@@ -14,139 +18,191 @@ body {
     padding:0;/* Remove margem padrão */
 }
 
-/* O conteúdo principal deve consumir todo o espaço vertical livre */
+
 .main {
     flex-grow: 1; /* O QUE FAZ O FOOTER SER EMPURRADO PARA O FUNDO */
 }
 
 
-/* Estilo do elemento Footer em si */
+
+/* Seu código atual (mantido) */
+/* ========================================= */
+/* 1. ESTILIZAÇÃO BASE E CONTÊINER           */
+/* ========================================= */
+
+/* ========================================= */
+/* 1. ESTILIZAÇÃO BASE E CONTÊINER           */
+/* ========================================= */
+
 .site-footer {
-    background-color: #0f4424;
+    background-color: #3A5D3E;
     color: #ecf0f1;
     padding: 30px 0 10px;
     font-family: Arial, sans-serif;
-    width: 100%; /* Garante que ele ocupe toda a largura */
+    width: 100%;
 }
 
-/* Container que envolve as três colunas */
+
 .footer-container {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 20px;
-    /* CHAVES PARA MANTER LADO A LADO */
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    gap: 30px;
-    flex-wrap: nowrap; /* Impede a quebra de linha em telas pequenas */
+    gap: 10px;
+    flex-wrap: nowrap;
 }
 
-/* Estilo de cada coluna (Largura 33.33%) */
+
+/* ========================================= */
+/* 2. AJUSTE DE PROPORÇÃO FLEXBOX            */
+/* (36% | 28% | 36%)                         */
+/* ========================================= */
+
+/* Colunas Laterais (Esquerda e Direita): 36% de largura base */
 .footer-column {
-    flex: 1 1 33.33%;
-    width: 33.33%;
+    flex: 1 1 36%;
+    width: auto;
     min-width: 0;
 }
 
-    .footer-column h3 {
-        color: #ecf0f1;
-        font-size: 1.2em;
-        margin-bottom: 15px;
-        border-bottom: 2px solid #3498db;
-        padding-bottom: 5px;
-    }
-
-/* Estilos específicos (Esquerda) */
-.footer-esquerdo ul {
-    list-style: none;
-    padding: 0;
+/* Coluna Central: 28% de largura base */
+.footer-central {
+    flex: 1 1 28%;
+    width: auto;
+    min-width: 150px;
 }
 
-    .footer-esquerdo ul li a {
+
+/* ========================================= */
+/* 3. ALINHAMENTO AO CENTRO (CORREÇÃO FINAL) */
+/* ========================================= */
+
+/* Esta regra centraliza todo o texto e o bloco da lista na coluna da esquerda */
+.footer-esquerdo {
+    text-align: center;
+}
+
+/* Esta regra centraliza o título (h4) e o endereço na coluna da direita */
+.footer-direito {
+    text-align: center;
+}
+
+/* Garante que o bloco da lista (UL) seja centralizado na coluna esquerda */
+.footer-esquerdo ul {
+    display: inline-block;
+    /* Mantemos o texto da lista alinhado à esquerda dentro do bloco, mas o bloco fica centralizado pelo "text-align: center" no pai */
+    text-align: left;
+    padding: 0;
+    list-style: none;
+}
+
+
+/* ========================================= */
+/* 4. ESTILOS DE CONTEÚDO (MANTIDOS/OTIMIZADOS) */
+/* ========================================= */
+
+/* Garante que o H3/H4 (título) seja alinhado pelo text-align: center; */
+.footer-column h3, .footer-column h4 {
+    color: #ecf0f1;
+    font-size: 1.2em;
+    margin-bottom: 15px;
+    border-bottom: 2px solid #2E4D37;
+    padding-bottom: 5px;
+}
+
+
+.footer-esquerdo ul li a {
+    color: #ecf0f1;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+    .footer-esquerdo ul li a:hover {
         color: #ecf0f1;
-        text-decoration: none;
-        transition: color 0.3s;
     }
 
-        .footer-esquerdo ul li a:hover {
-            color: #ecf0f1;
-        }
 
-/* Estilos específicos (Central e Direita) */
 .footer-central p,
+.footer-direito p,
 .footer-direito .social-links a {
     line-height: 1.6;
     color: #ecf0f1;
     text-decoration: none;
     transition: color 0.3s;
 }
-/* ✅ NOVO BLOCO: Aplica Flexbox ao container para alinhar os links */
+
 .footer-central .social-links {
-    display: flex; /* CHAVE: Habilita o Flexbox para alinhamento horizontal */
+    display: flex;
     flex-direction: row;
-    flex-wrap: wrap; /* CORREÇÃO PRINCIPAL: Permite que os itens quebrem a linha */
-    justify-content: center; /* Centraliza o conteúdo (agora os ícones na segunda linha) */
-    align-items: center; /* Alinha os ícones verticalmente */
-    gap: 15px; /* Espaçamento entre os ícones */
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
     margin-top: 10px;
 }
 
-    /* Regra para garantir que o texto 'Nossas Redes Sociais' fique em sua própria linha */
+
     .footer-central .social-links p {
-        width: 100%; /* Garante que o parágrafo ocupe a largura total */
+        width: 100%;
         text-align: center;
         margin-bottom: 10px;
     }
 
-    /* Estilo para as Imagens (Tamanho e Display) */
+
     .footer-central .social-links img {
-        width: 35px; /* Tamanho fixo para ícones */
+        width: 30px;
         height: 35px;
         object-fit: contain;
-       
-    }
-    .footer-direito .social-links a:hover {
-        color: #ecf0f1;
     }
 
-/* Estilo da seção de direitos autorais */
+.footer-direito .social-links a:hover {
+    color: #ecf0f1;
+}
+
+
 .footer-bottom {
     text-align: center;
     padding-top: 0px;
     margin-top: 20px;
-    
 }
 
 
+/* ========================================= */
+/* 5. RESPONSIVIDADE (MOBILE)                */
+/* ========================================= */
 
+@media (max-width: 768px) {
 
-/* Os estilos abaixo foram mantidos como estavam em seu código */
+    .footer-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .footer-column, .footer-central {
+        flex: 1 1 100%;
+        margin-bottom: 20px;
+        padding: 0;
+    }
+}
 .btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
-      box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+     : box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
 }
 
-.video-fundo {
-    /* 1. Fixa o vídeo em relação à tela (viewport) */
-    position: fixed;
-    top: 0;
-    left: 0;
-    /* 2. Garante que o container do vídeo cubra 100% da largura e altura da viewport */
-    width: 100vw;
-    height: 100vh;
-    /* 3. ESSENCIAL: Faz com que o conteúdo do vídeo cubra o container 
-       inteiro, cortando as bordas se necessário, mas sem deixar espaços vazios. */
-    object-fit: cover;
-    /* 4. Garante que o vídeo fique no fundo de TUDO */
-    z-index: -9999;
-    /* 5. (Opcional) Define um alinhamento caso object-fit não preencha totalmente */
-    object-position: center;
+
+
+.container-fluid {
+    background-color: #3A5D3E;
+    margin: 0;
+    padding: 0;
+    font-weight: bold;
 }
 
-/* O código para o slideshow (ou qualquer outro conteúdo) pode permanecer o mesmo: */
-.slideShow {
-    margin-top: 500px;
-    width: 800px;
-    height: 600px;
-    margin-left: 25%;
+.container-fluid img{
+    width:90px;
+    height:90px;
+}
+container-head {
+    background-color: #3A5D3E;
 }
