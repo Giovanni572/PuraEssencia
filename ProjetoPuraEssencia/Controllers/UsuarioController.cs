@@ -68,5 +68,11 @@ namespace ProjetoPuraEssencia.Controllers
         {
             return View(_usuarioRepositorio.TodosUsuarios());
         }
+
+        public IActionResult ExcluirUsuario(int id)
+        {
+            _usuarioRepositorio.ExcluirUsuario(id);
+            return RedirectToAction(nameof(Index));
+        }
     }
 }

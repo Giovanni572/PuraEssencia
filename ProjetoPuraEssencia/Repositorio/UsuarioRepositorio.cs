@@ -1,5 +1,6 @@
 ﻿using MySql.Data.MySqlClient;
 using ProjetoPuraEssencia.Models;
+using ProjetoPuraEssencia.Repositorio;
 using System.Data;
 using System.Runtime.ConstrainedExecution;
 
@@ -32,7 +33,7 @@ namespace ProjetoPuraEssencia.Repositorio
                             email = dr["email"].ToString(),
                             telefone = dr["telefone"].ToString(),
                             endereco = dr["endereco"].ToString(),
-                            cep = Convert.ToInt32(dr["cep"]),
+                            cep = dr["cep"].ToString(),
                             senha = dr["senha"].ToString(),
                             tipo = dr["tipo"].ToString()
                         };
@@ -49,18 +50,20 @@ namespace ProjetoPuraEssencia.Repositorio
                 conexao.Open();
 
                 MySqlCommand cmd = new MySqlCommand(
-                    "INSERT INTO usuario (cpf, nome, email, telefone, endereco, cep, senha) " +
-                    "VALUES(@cpf, @nome, @email, @telefone, @endereco, @cep, @senha)",
+                    "INSERT INTO usuario ( nome, cpf, email, senha, telefone, endereco, cep, tipo)" +
+                    "VALUES(@nome, @cpf, @email, @senha, @telefone, @endereco, @cep, @tipo)",
                     conexao
                 );
 
-                cmd.Parameters.Add("@cpf", MySqlDbType.Int32).Value = usuario.cpf;
                 cmd.Parameters.Add("@nome", MySqlDbType.VarChar).Value = usuario.nome;
+                cmd.Parameters.Add("@cpf", MySqlDbType.VarChar).Value = usuario.cpf;
                 cmd.Parameters.Add("@email", MySqlDbType.VarChar).Value = usuario.email;
-                cmd.Parameters.Add("@telefone", MySqlDbType.Int32).Value = usuario.telefone;
-                cmd.Parameters.Add("@endereco", MySqlDbType.VarChar).Value = usuario.endereco;
-                cmd.Parameters.Add("@cep", MySqlDbType.Int32).Value = usuario.cep;
                 cmd.Parameters.Add("@senha", MySqlDbType.VarChar).Value = usuario.senha;
+                cmd.Parameters.Add("@telefone", MySqlDbType.VarChar).Value = usuario.telefone;
+                cmd.Parameters.Add("@endereco", MySqlDbType.VarChar).Value = usuario.endereco;
+                cmd.Parameters.Add("@cep", MySqlDbType.VarChar).Value = usuario.cep;
+                cmd.Parameters.Add("@tipo", MySqlDbType.VarChar).Value = usuario.tipo ?? "Cliente";
+
 
                 cmd.ExecuteNonQuery();
             }
@@ -101,13 +104,13 @@ namespace ProjetoPuraEssencia.Repositorio
             }
         }
 
-        public void Excluir(int id_usuario)
+        public void ExcluirUsuario(int id_usuario)
         {
             using (var conexao = new MySqlConnection(_conexaoMysql))
             {
                 conexao.Open();
 
-                MySqlCommand cmd = new MySqlCommand("delete from usuario where id_usuario = @id", conexao);
+                MySqlCommand cmd = new MySqlCommand("delete from usuario where id_usuario=@id", conexao);
 
                 cmd.Parameters.AddWithValue("@id", id_usuario);
 
