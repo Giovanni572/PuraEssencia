@@ -10,7 +10,8 @@
 </head>
 <body>
     <header>
-    <nav class="navbar col-12 m-a d-flex py-1 align-items-center navbar-expand-sm navbar-toggleable-sm navbar-light box-shadow" style="z-index:999; background-color:#3A5D3E">
+    <nav class="navbar col-12 m-a d-flex py-1 align-items-center navbar-expand-sm navbar-toggleable-sm navbar-light box-shadow " style="z-index:999; background-color:#3A5D3E">
+
         <div class="container-fluid h-100 py-0">
             <img src="/img/logoPuraEssenciaSfundo.png" alt="logo" />
 
@@ -25,14 +26,25 @@
                     <li class="nav-item">
                         <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-dark" asp-area="" asp-controller="Usuario" asp-action="Login">Login</a>
-                    </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark"
+                               asp-area=""
+                               asp-controller="Usuario"
+                               asp-action="Login"
+                               target="_blank"
+                               rel="noopener noreferrer"
+                               data-ajax="false">Login</a>
+                        </li>
                 </ul>
             </div>
         </div>
     </nav>
 </header>
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
     <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
         <div class="carousel-inner" style="height:500px;">
             <div class="carousel-item active">
@@ -65,7 +77,7 @@
                 <img src="/img/chaHortela.jpg" class="card-img-top" alt="...">
                 <div class="card-body">
                     <h5 class="card-title">hortelã</h5>
-                    <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                    <p class="card-text">A hortelã é uma erva aromática muito conhecida pelo seu aroma fresco e sabor refrescantel, ela é utilizada tanto na culinária, quanto na medicina caseira para aliviar dores de estômago, melhorar a digestão e refrescar a respiração.</p>
                 </div>
             </div>
         </div>
@@ -73,8 +85,8 @@
             <div class="card h-100">
                 <img src="/img/chá_camomila.webp" class="card-img-top" alt="...">
                 <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">This is a short card.</p>
+                    <h5 class="card-title">Camomila</h5>
+                    <p class="card-text">A camomila é uma planta medicinal conhecida por seu efeito calmante. Muito usada em chás, ajuda a aliviar ansiedade, melhorar o sono e reduzir inflamações. Possui flores pequenas e brancas, com aroma suave e terapêutico..</p>
                 </div>
             </div>
         </div>
@@ -82,8 +94,8 @@
             <div class="card h-100">
                 <img src="/img/chaMate.jpg" class="card-img-top" alt="...">
                 <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content.</p>
+                    <h5 class="card-title">Chá Mate</h5>
+                    <p class="card-text">O chá-mate é uma bebida feita das folhas da erva-mate, conhecida pelo sabor levemente amargo e pelo efeito estimulante, graças à cafeína natural. É muito consumido quente ou gelado, ajudando a dar energia, melhorar a concentração e auxiliar na digestão.</p>
                 </div>
             </div>
         </div>        
@@ -94,8 +106,8 @@
             <div class="card h-100">
                 <img src="/img/temperoManjericao.jpg" class="card-img-top" alt="...">
                 <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                    <h5 class="card-title">Manjericão</h5>
+                    <p class="card-text">O manjericão é uma erva aromática muito usada na culinária, especialmente em pratos italianos. Tem folhas verdes e perfumadas, com sabor levemente doce e picante. Além de realçar o sabor dos alimentos, possui propriedades antioxidantes e anti-inflamatórias.</p>
                 </div>
             </div>
         </div>
@@ -103,8 +115,8 @@
             <div class="card h-100">
                 <img src="/img/temperoAlecrim.jpg" class="card-img-top" alt="...">
                 <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">This is a short card.</p>
+                    <h5 class="card-title">Alecrim</h5>
+                    <p class="card-text">O alecrim é uma erva aromática de aroma forte e marcante, muito usada como tempero em carnes, batatas e pães. Suas folhas finas e verdes possuem propriedades estimulantes, antioxidantes e anti-inflamatórias. Além de realçar sabores, o alecrim é conhecido por ajudar na memória, concentração e na digestão.</p>
                 </div>
             </div>
         </div>
@@ -112,8 +124,8 @@
             <div class="card h-100">
                 <img src="/img/temperoOregano.jpg" class="card-img-top" alt="...">
                 <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content.</p>
+                    <h5 class="card-title">Orégano</h5>
+                    <p class="card-text">O orégano é uma erva aromática muito utilizada na culinária, especialmente em pizzas, molhos e carnes. Tem sabor marcante e levemente picante, além de ser rico em antioxidantes e possuir propriedades antimicrobianas.</p>
                 </div>
             </div>
         </div>
@@ -124,8 +136,8 @@
             <div class="card h-100">
                 <img src="/img/organicoCafe.jpg" class="card-img-top" alt="...">
                 <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                    <h5 class="card-title">Café Orgânico</h5>
+                    <p class="card-text">O café orgânico é cultivado sem agrotóxicos, adubos químicos ou produtos sintéticos, respeitando o meio ambiente e a saúde do solo. Ele preserva melhor o sabor natural do grão, resultando em uma bebida mais pura e aromática.</p>
                 </div>
             </div>
         </div>
@@ -133,8 +145,8 @@
             <div class="card h-100">
                 <img src="/img/organicoAcucar.jpg" class="card-img-top" alt="...">
                 <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">This is a short card.</p>
+                    <h5 class="card-title">Açúcar Orgânico</h5>
+                    <p class="card-text">O açúcar orgânico é produzido sem agrotóxicos, fertilizantes químicos ou aditivos artificiais. Ele passa por um processo menos refinado, preservando mais nutrientes naturais da cana e mantendo uma cor levemente mais escura.</p>
                 </div>
             </div>
         </div>
@@ -142,17 +154,13 @@
             <div class="card h-100">
                 <img src="/img/organicoChocolatePo.jpg" class="card-img-top" alt="...">
                 <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content.</p>
+                    <h5 class="card-title">Chocolate Orgânico</h5>
+                    <p class="card-text">O chocolate orgânico é produzido a partir de cacau cultivado sem agrotóxicos, adubos químicos ou conservantes artificiais. Seu processo é mais natural e sustentável, valorizando a biodiversidade e o trabalho dos produtores</p>
                 </div>
             </div>
         </div>
     </div>
-    <div class="container">
-        <main role="main" class="pb-3">
-            @RenderBody()
-        </main>
-    </div>
+   
 
     <footer class="site-footer">
         <div class="footer-container">
