@@ -69,6 +69,43 @@ namespace ProjetoPuraEssencia.Controllers
             return View(_usuarioRepositorio.TodosUsuarios());
         }
 
+        public IActionResult EditarUsuario(int id)
+        {
+            var usuario = _usuarioRepositorio.ObterUsuarioPorId(id);
+            if(usuario == null)
+            {
+                return NotFound();
+            }
+            return View(usuario);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult EditarUsuario(int id, [Bind("id_usuario, nome, telefone, email")] Usuario usuario)
+        {
+            if (id != usuario.id_usuario)
+            {
+                return NotFound();
+            }
+            if (ModelState.IsValid)
+            {
+                try {
+                    if (_usuarioRepositorio.AtualizarUsuario(usuario))
+                    {
+                        return RedirectToAction(nameof(Index));
+                    }
+                }
+                catch (Exception)
+                {
+                   ModelState.AddModelError("", "Erro ao atualizar usuário.");
+                   return View(usuario);
+                }
+                
+                return RedirectToAction(nameof(Index));
+            }
+            return View(usuario);
+        }
+
         public IActionResult ExcluirUsuario(int id)
         {
             _usuarioRepositorio.ExcluirUsuario(id);

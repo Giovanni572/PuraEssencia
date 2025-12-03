@@ -1,4 +1,5 @@
 ﻿using MySql.Data.MySqlClient;
+using MySqlX.XDevAPI;
 using ProjetoPuraEssencia.Models;
 using ProjetoPuraEssencia.Repositorio;
 using System.Data;
@@ -43,6 +44,33 @@ namespace ProjetoPuraEssencia.Repositorio
             }
         }
 
+        public bool AtualizarUsuario(Usuario usuario)
+        {
+            try
+            {
+                using (var conexao = new MySqlConnection(_conexaoMysql))
+                {
+                    conexao.Open();
+                    MySqlCommand cmd = new MySqlCommand("Update usuario set nome=@nome, telefone=@telefone, email=@email " + " where id_usuario=@id", conexao);
+                    cmd.Parameters.Add("@id", MySqlDbType.Int32).Value = usuario.id_usuario;
+                    cmd.Parameters.Add("@nome", MySqlDbType.VarChar).Value = usuario.nome;
+                    cmd.Parameters.Add("@telefone", MySqlDbType.VarChar).Value = usuario.telefone;
+                    cmd.Parameters.Add("@email", MySqlDbType.VarChar).Value = usuario.email;
+
+                    
+                    int linhasAfetadas = cmd.ExecuteNonQuery();
+                    return linhasAfetadas > 0; 
+
+                }
+            }
+            catch (MySqlException ex)
+            {
+                Console.WriteLine($"Erro ao atualizar usuario: {ex.Message}");
+                return false; 
+
+            }
+        }
+
         public void RegistroUsuario(Usuario usuario)
         {
             using (var conexao = new MySqlConnection(_conexaoMysql))
@@ -69,7 +97,7 @@ namespace ProjetoPuraEssencia.Repositorio
             }
         }
 
-        //listas todos os clientes
+        
         public IEnumerable<Usuario> TodosUsuarios()
         {
             List<Usuario> UsuarioList = new List<Usuario>();
@@ -103,6 +131,39 @@ namespace ProjetoPuraEssencia.Repositorio
                 return UsuarioList;
             }
         }
+
+        public Usuario ObterUsuarioPorId(int id)
+        {
+
+            using (var conexao = new MySqlConnection(_conexaoMysql))
+            {
+                conexao.Open();
+                MySqlCommand cmd = new MySqlCommand("SELECT * from usuario where id_usuario=@id", conexao);
+
+                cmd.Parameters.AddWithValue("@id", id);
+
+                MySqlDataAdapter da = new MySqlDataAdapter(cmd);
+
+                MySqlDataReader dr;
+
+                Usuario usuario = new Usuario();
+
+                dr = cmd.ExecuteReader(CommandBehavior.CloseConnection);
+
+                while (dr.Read())
+                {
+                    usuario.id_usuario = Convert.ToInt32(dr["id_usuario"]);
+                    usuario.nome = (string)(dr["nome"]);
+                    usuario.email = (string)(dr["email"]);
+                    usuario.telefone = (string)(dr["telefone"]);
+                }
+                return usuario;
+            }
+
+        }
+
+
+        
 
         public void ExcluirUsuario(int id_usuario)
         {
