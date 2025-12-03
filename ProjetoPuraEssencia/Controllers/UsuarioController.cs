@@ -29,11 +29,11 @@ namespace ProjetoPuraEssencia.Controllers
 
             if (usuario != null && usuario.senha == senha)
             {
-                if (usuario.tipo == "admin")
+                if (usuario.tipo == "Administrador")
                 {
                     return RedirectToAction("Index", "Usuario");
                 }
-                else
+                else if(usuario.tipo == "Cliente")
                 {
                     return RedirectToAction("Index", "Home");
                 }

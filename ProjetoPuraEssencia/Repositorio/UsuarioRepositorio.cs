@@ -26,10 +26,11 @@ namespace ProjetoPuraEssencia.Repositorio
                     {
                         usuario = new Usuario
                         {
-                            cpf = Convert.ToInt32(dr["cpf"]),
+                            id_usuario = Convert.ToInt32(dr["id_usuario"]),
+                            cpf = dr["cpf"].ToString(),
                             nome = dr["nome"].ToString(),
                             email = dr["email"].ToString(),
-                            telefone = Convert.ToInt32(dr["telefone"]),
+                            telefone = dr["telefone"].ToString(),
                             endereco = dr["endereco"].ToString(),
                             cep = Convert.ToInt32(dr["cep"]),
                             senha = dr["senha"].ToString(),
@@ -89,15 +90,32 @@ namespace ProjetoPuraEssencia.Repositorio
                     UsuarioList.Add(
                                 new Usuario
                                 {
-                                    cpf = Convert.ToInt32(dr["cpf"]),
+                                    id_usuario = Convert.ToInt32(dr["id_usuario"]),
                                     nome = ((string)dr["nome"]),
-                                    telefone = Convert.ToInt32(dr["telefone"]),
-                                    email = ((string)dr["email"])
+                                    telefone = ((string)dr["telefone"]),
+                                    email = ((string)dr["email"]),
+                                    tipo = ((string)dr["tipo"])
                                 });
                 }
                 return UsuarioList;
             }
         }
 
+        public void Excluir(int id_usuario)
+        {
+            using (var conexao = new MySqlConnection(_conexaoMysql))
+            {
+                conexao.Open();
+
+                MySqlCommand cmd = new MySqlCommand("delete from usuario where id_usuario = @id", conexao);
+
+                cmd.Parameters.AddWithValue("@id", id_usuario);
+
+                int i = cmd.ExecuteNonQuery();
+
+                conexao.Close();
+            }
+
+        }
     }
 }
