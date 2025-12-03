@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using MySql.Data.MySqlClient;
 using ProjetoPuraEssencia.Models;
 using ProjetoPuraEssencia.Repositorio;
 
@@ -65,7 +66,7 @@ namespace ProjetoPuraEssencia.Controllers
         [HttpGet]
         public IActionResult Index()
         {
-            return View();
+            return View(_usuarioRepositorio.TodosUsuarios());
         }
     }
 }

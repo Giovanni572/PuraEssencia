@@ -65,5 +65,39 @@ namespace ProjetoPuraEssencia.Repositorio
             }
         }
 
+        //listas todos os clientes
+        public IEnumerable<Usuario> TodosUsuarios()
+        {
+            List<Usuario> UsuarioList = new List<Usuario>();
+
+            using (var conexao = new MySqlConnection(_conexaoMysql))
+            {
+                conexao.Open();
+
+                MySqlCommand cmd = new MySqlCommand("SELECT * from usuario", conexao);
+
+                MySqlDataAdapter da = new MySqlDataAdapter(cmd);
+
+                DataTable dt = new DataTable();
+
+                da.Fill(dt);
+
+                conexao.Close();
+
+                foreach (DataRow dr in dt.Rows)
+                {
+                    UsuarioList.Add(
+                                new Usuario
+                                {
+                                    cpf = Convert.ToInt32(dr["cpf"]),
+                                    nome = ((string)dr["nome"]),
+                                    telefone = Convert.ToInt32(dr["telefone"]),
+                                    email = ((string)dr["email"])
+                                });
+                }
+                return UsuarioList;
+            }
+        }
+
     }
 }
