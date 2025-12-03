@@ -33,7 +33,7 @@ namespace ProjetoPuraEssencia.Repositorio
                             endereco = dr["endereco"].ToString(),
                             cep = Convert.ToInt32(dr["cep"]),
                             senha = dr["senha"].ToString(),
-                            confirmarsenha = dr["confirmarsenha"].ToString()
+                            tipo = dr["tipo"].ToString()
                         };
                     }
                     return usuario;

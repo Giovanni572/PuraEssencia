@@ -10,6 +10,7 @@
         public string endereco {  get; set; }
         public int cep { get; set; }
         public string senha { get; set; }
+        public string tipo { get; set; }
         public string confirmarsenha { get; set; }
     }
 }

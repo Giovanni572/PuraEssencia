@@ -28,7 +28,14 @@ namespace ProjetoPuraEssencia.Controllers
 
             if (usuario != null && usuario.senha == senha)
             {
-                return RedirectToAction("Index", "Home");
+                if (usuario.tipo == "admin")
+                {
+                    return RedirectToAction("Index", "Usuario");
+                }
+                else
+                {
+                    return RedirectToAction("Index", "Home");
+                }
             }
             ModelState.AddModelError("", "Email e Senha Inválidos");
             return View();
@@ -53,6 +60,12 @@ namespace ProjetoPuraEssencia.Controllers
                 _usuarioRepositorio.RegistroUsuario(usuario);
                 return RedirectToAction("Login");
             }
+        }
+
+        [HttpGet]
+        public IActionResult Index()
+        {
+            return View();
         }
     }
 }
