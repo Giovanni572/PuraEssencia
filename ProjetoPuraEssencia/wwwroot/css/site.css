@@ -19,8 +19,75 @@ body {
 }
 
 
+
+nav.navbar a.nav-link:hover {
+    color: #D4AF37 !important; /* Dourado ao passar o mouse */
+}
+
+
 .main {
     flex-grow: 1; /* O QUE FAZ O FOOTER SER EMPURRADO PARA O FUNDO */
+}
+
+h2 {
+    margin-top: 40px;
+    margin-bottom: 20px;
+    padding: 10px;
+    border-radius: 5px;
+    color: #333;
+    /* O HTML já define background-color:#D4AF37 inline */
+}
+
+/* --- Cards de Produto (E-commerce Style) --- */
+.card {
+    border: none; /* Remove a borda padrão do bootstrap */
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05); /* Sombra suave para efeito de profundidade */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden; /* Garante que a imagem respeite o border-radius */
+}
+
+    .card:hover {
+        transform: translateY(-5px); /* Efeito sutil ao passar o mouse */
+        box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+    }
+
+
+.card-body {
+    padding: 20px;
+}
+
+.card-title {
+    color: #3A5D3E; /* Cor da marca para os títulos dos produtos */
+    font-weight: bold;
+}
+
+.card-text {
+    font-size: 0.9rem;
+    color: #6c757d;
+}
+
+.product-footer {
+    padding: 15px 20px;
+    border-top: 1px solid #eee;
+    background-color: #fdfdfd;
+}
+
+.main-price {
+    display: block;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #d9534f; /* Cor de destaque para o preço principal (ex: vermelho/promoção) */
+}
+
+.payment-options {
+    font-size: 0.8rem;
+    color: #6c757d;
+}
+
+/* Espaçamento entre as linhas de cards */
+.row.g-4 {
+    margin-bottom: 40px;
 }
 
 
