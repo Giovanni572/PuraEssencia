@@ -7,6 +7,7 @@ html {
 
 header {
     background-color: #3A5D3E;
+    margin-bottom:0; !important;
 }
 
 body {
@@ -15,7 +16,13 @@ body {
     flex-direction: column;
     min-height: 100vh; /* Garante que o corpo tenha no mínimo a altura da tela */
     margin: 0;
-    padding:0;/* Remove margem padrão */
+    padding-top:90px;
+}
+header, .navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1030; /* Um valor alto para garantir que fique por cima */
 }
 
 
@@ -90,6 +97,21 @@ h2 {
     margin-bottom: 40px;
 }
 
+
+main, .content-wrapper {
+    padding-top: 0 !important; /* Use !important se necessário */
+}
+
+.navbar {
+    margin-bottom: 0 !important;
+    padding-bottom: 0 !important;
+}
+
+/* Garante que o carrossel não comece com espaçamento superior */
+.carousel {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+}
 
 
 /* Seu código atual (mantido) */
@@ -172,6 +194,7 @@ h2 {
 
 /* Garante que o H3/H4 (título) seja alinhado pelo text-align: center; */
 .footer-column h3, .footer-column h4 {
+    margin-left: 200px;
     color: #ecf0f1;
     font-size: 1.2em;
     margin-bottom: 15px;
@@ -184,6 +207,8 @@ h2 {
     color: #ecf0f1;
     text-decoration: none;
     transition: color 0.3s;
+    margin-right: 190px;
+
 }
 
     .footer-esquerdo ul li a:hover {
@@ -191,13 +216,14 @@ h2 {
     }
 
 
-.footer-central p,
+.footer-central p,{}
 .footer-direito p,
 .footer-direito .social-links a {
     line-height: 1.6;
     color: #ecf0f1;
     text-decoration: none;
     transition: color 0.3s;
+    margin-left: 200px;
 }
 
 .footer-central .social-links {
@@ -221,15 +247,18 @@ h2 {
     .footer-central .social-links img {
         width: 30px;
         height: 35px;
+       
         object-fit: contain;
     }
 
 .footer-direito .social-links a:hover {
     color: #ecf0f1;
+
 }
 
 
 .footer-bottom {
+   
     text-align: center;
     padding-top: 0px;
     margin-top: 20px;
@@ -254,7 +283,7 @@ h2 {
     }
 }
 .btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
-     : box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+    box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
 }
 
 
@@ -266,10 +295,103 @@ h2 {
     font-weight: bold;
 }
 
-.container-fluid img{
-    width:90px;
-    height:90px;
+    .container-fluid img {
+        /* Altura da imagem no Desktop (Mantenha 90px para telas grandes) */
+        width: auto;
+        height: 90px;
+    }
+
+/* ⚠️ Adiciona a responsividade para a imagem (essencial para mobile) */
+@media (max-width: 768px) {
+    .container-fluid img {
+        height: 50px !important; /* Altura reduzida para celular */
+        width: 50px !important;
+    }
 }
-container-head {
+@media (max-width: 575.98px) {
+    .navbar .container-fluid {
+        position: relative !important;
+    }
+}
+.container-head {
     background-color: #3A5D3E;
+}
+
+/* SEÇÃO DA LABEL DE PROMOÇÃO */
+/* ========================================= */
+
+/* 1. Estilo Padrão (Desktop/Telas Maiores) */
+/* SEÇÃO DA LABEL DE PROMOÇÃO: Margem e Estilo Unificados */
+/* ======================================================= */
+
+/* 1. Estilo Básico (Definindo Largura e Aparência) */
+.promocao-label {
+    /* Largura e fonte que você desejava para desktop */
+    width: 500px;
+    font-size: 30px;
+    /* Estilos visuais */
+    text-align: center;
+    background-color: darkgray;
+    border-radius: 20px;
+    padding: 15px;
+    display: block;
+    color: #333;
+}
+
+/* 2. Margem PADRÃO (Desktop) no contêiner (.promocao) */
+.promocao {
+    margin-top: 50px;
+}
+
+
+/* 3. Estilos RESPONSIVOS (Mobile: Largura/Fonte/Margem) */
+@media (max-width: 768px) {
+    /* Reduz a margem superior para resolver o problema de altura */
+    .promocao {
+        margin-top: 20px !important;
+    }
+
+    /* Regras de responsividade de largura e fonte (reaplicadas para garantir o ajuste) */
+    .promocao-label {
+        width: 95% !important;
+        font-size: 16px !important;
+        padding: 10px !important;
+    }
+}
+@media (max-width: 768px) {
+    body {
+        /* A altura da sua logo é 50px no mobile. Usamos 60px para dar uma pequena folga. */
+        padding-top: 50px !important;
+    }
+}
+/* Correção de Posicionamento do Menu Recolhível (Mobile) */
+/* Aplica-se em telas menores que 576px, onde o menu recolhe. */
+/* CORREÇÃO DE POSICIONAMENTO DO MENU RECOLHÍVEL (MOBILE) */
+/* Aplica-se em telas menores que 576px (ponto de quebra padrão do Bootstrap para o navbar-expand-sm) */
+@media (max-width: 575.98px) {
+
+    .navbar-collapse {
+        /* Garante o posicionamento absoluto em relação ao seu pai (a tag <nav>) */
+        position: absolute !important;
+        /* 💡 Essencial: Força o menu a começar 100% abaixo da altura da nav principal. */
+        top: 100% !important;
+        /* Garante que o menu comece na borda esquerda e ocupe 100% da largura. */
+        width: 100% !important;
+        left: 0 !important;
+        /* Define um z-index alto, mas ligeiramente abaixo do header principal (que tem z-index 1030). */
+        z-index: 1029 !important;
+        background-color: #3A5D3E !important;
+    }
+
+    /* Estiliza os links internos para serem legíveis no menu que se abre. */
+    .navbar-nav .nav-item .nav-link {
+        padding: 10px 15px !important;
+        color: white !important; /* Cor branca para o link no menu aberto */
+    }
+
+    /* Regra de Z-Index adicional para garantir que a NAV principal fique por cima. */
+    /* Você pode manter o z-index da nav em 1030 no seu CSS padrão, mas reforçamos aqui. */
+    .navbar {
+        z-index: 1030 !important;
+    }
 }
