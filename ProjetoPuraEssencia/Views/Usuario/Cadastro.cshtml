@@ -1,45 +1,99 @@
 ﻿@model ProjetoPuraEssencia.Models.Usuario
 
-<form asp-action="Cadastro" method="post">
-    <div>
-        <label>Nome:</label>
-        <input type="text" name="nome" required />
-    </div>
+<link rel="stylesheet" href="~/css/login.css" />
 
-    <div>
-        <label>CPF:</label>
-        <input type="text" name="cpf" required />
-    </div>
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
 
-    <div>
-        <label>E-mail:</label>
-        <input type="email" name="email" required />
-    </div>
+            <h2 class="text-center fw-bold color-label">Crie seu cadastro</h2>
 
-    <div>
-        <label>Telefone:</label>
-        <input type="tel" name="telefone" required />
-    </div>
+            <form asp-action="Cadastro" method="post" class="p-4">
 
-    <div>
-        <label>Endereço:</label>
-        <input type="text" name="endereco" required />
-    </div>
+                <div class="mb-3">
+                    <label class="form-label fw-bold color-label">Nome</label>
+                    <input type="text"
+                           class="form-control rounded-pill custom-bg"
+                           asp-for="nome"
+                           placeholder="Seu nome"
+                           required />
+                           <span asp-validation-for="nome"></span>
+                </div>
 
-    <div>
-        <label>CEP:</label>
-        <input type="text" name="cep" required />
-    </div>
+                <div class="mb-3">
+                    <label class="form-label fw-bold color-label">CPF</label>
+                    <input type="text"
+                           class="form-control custom-bg rounded-pill"
+                           asp-for="cpf"
+                           placeholder="55577788899"
+                           required />
+                </div>
 
-    <div>
-        <label>Senha:</label>
-        <input type="password" name="senha" required />
-    </div>
+                <div class="mb-3">
+                    <label class="form-label fw-bold color-label">E-mail</label>
+                    <input type="email"
+                           class="form-control custom-bg rounded-pill"
+                           asp-for="email"
+                           placeholder="email@email.com"
+                           required />
+                </div>
 
-    <div>
-        <label>Confirmar Senha:</label>
-        <input type="password" name="confirmarsenha" required />
-    </div>
+                <div class="mb-3">
+                    <label class="form-label fw-bold color-label">Telefone</label>
+                    <input type="tel"
+                           class="form-control custom-bg rounded-pill"
+                           asp-for="telefone"
+                           placeholder="10987654321"
+                           required />
+                </div>
 
-    <button type="submit">Cadastrar</button>
-</form>
+                <div class="mb-3">
+                    <label class="form-label fw-bold color-label">Endereço</label>
+                    <input type="text"
+                           class="form-control custom-bg rounded-pill"
+                           asp-for="endereco"
+                           placeholder="Rua, número, bairro"
+                           required />
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label fw-bold color-label">CEP</label>
+                    <input type="text"
+                           class="form-control custom-bg rounded-pill"
+                           asp-for="cep"
+                           placeholder="00000000"
+                           required />
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label fw-bold color-label">Senha</label>
+                    <input type="password"
+                           class="form-control custom-bg rounded-pill"
+                           asp-for="senha"
+                           placeholder="****"
+                           required />
+                    <span asp-validation-for="senha" class="text-danger"></span>
+
+                </div>
+
+                <div class="mb-4">
+                    <label class="form-label fw-bold color-label">Confirmar Senha</label>
+                    <input type="password"
+                           class="form-control custom-bg rounded-pill"
+                           asp-for="confirmarsenha"
+                           placeholder="****"
+                           required />
+                    <span asp-validation-for="confirmarsenha" class="text-danger"></span>
+                </div>
+
+                <div class="text-center">
+                    <button class="btn btn-success text-white w-50 rounded-pill">
+                        Cadastrar
+                    </button>
+                </div>
+
+            </form>
+
+        </div>
+    </div>
+</div>

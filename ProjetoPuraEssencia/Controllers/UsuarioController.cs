@@ -53,9 +53,9 @@ namespace ProjetoPuraEssencia.Controllers
         public IActionResult Cadastro(Usuario usuario)
         {
            
-            if (usuario.senha != usuario.confirmarsenha)
+            if (!ModelState.IsValid)
             {
-                return RedirectToAction("Cadastro");
+                return View(usuario);
             }
             else {
                 _usuarioRepositorio.RegistroUsuario(usuario);
@@ -83,6 +83,10 @@ namespace ProjetoPuraEssencia.Controllers
         [ValidateAntiForgeryToken]
         public IActionResult EditarUsuario(int id, [Bind("id_usuario, nome, telefone, email")] Usuario usuario)
         {
+
+            ModelState.Remove(nameof(usuario.senha));
+            ModelState.Remove(nameof(usuario.confirmarsenha));
+
             if (id != usuario.id_usuario)
             {
                 return NotFound();

@@ -18,5 +18,15 @@ html {
 }
 
 body {
-  margin-bottom: 60px;
+    margin-bottom: 60px;
+    background-color: #F8F3E9;
+}
+
+
+.bg-bege {
+    background-color: #F8F3E9;
+}
+
+.bg-bege-escuro {
+    background-color: #E4DFD5
 }
