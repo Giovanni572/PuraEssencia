@@ -271,20 +271,20 @@ main, .content-wrapper {
     color: #333;
 }
 
-/* 2. Margem PADRÃO (Desktop) no contêiner (.promocao) */
+
 .promocao {
     margin-top: 50px;
 }
 
 
-/* 3. Estilos RESPONSIVOS (Mobile: Largura/Fonte/Margem) */
+
 @media (max-width: 768px) {
-    /* Reduz a margem superior para resolver o problema de altura */
+    
     .promocao {
         margin-top: 20px !important;
     }
 
-    /* Regras de responsividade de largura e fonte (reaplicadas para garantir o ajuste) */
+    
     .promocao-label {
         width: 95% !important;
         font-size: 16px !important;
