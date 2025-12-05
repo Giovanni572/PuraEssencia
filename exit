@@ -1,0 +1,121 @@
+* [33mcommit 6d1043d4a5ad2815c94cb9c054ce060cf9cb48f9[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmaster[m[33m)[m
+[31m|[m Author: Fabio Evangelista <evangelistafabio985@gmail.com>
+[31m|[m Date:   Fri Dec 5 12:22:37 2025 -0200
+[31m|[m 
+[31m|[m     regularizando responsividade
+[31m|[m   
+*   [33mcommit 39cb90668c37045f04394ba2d2a7536cefac8ccb[m[33m ([m[1;31morigin/master[m[33m)[m
+[32m|[m[33m\[m  Merge: d771b9a 086f561
+[32m|[m [33m|[m Author: luevangelista0-art <luevangelista0@gmail.com>
+[32m|[m [33m|[m Date:   Thu Dec 4 20:38:00 2025 -0300
+[32m|[m [33m|[m 
+[32m|[m [33m|[m     Merge branch 'master' of https://github.com/Giovanni572/PuraEssencia
+[32m|[m [33m|[m 
+[32m|[m * [33mcommit 086f561256e2df50655266ca0f79ee89d7f90eda[m
+[32m|[m [33m|[m Author: Fabio Evangelista <evangelistafabio985@gmail.com>
+[32m|[m [33m|[m Date:   Thu Dec 4 20:11:56 2025 -0200
+[32m|[m [33m|[m 
+[32m|[m [33m|[m      atualização site
+[32m|[m [33m|[m   
+[32m|[m *   [33mcommit 0675fa8c8a1f77835a948914e5437c44c3d67829[m
+[32m|[m [34m|[m[35m\[m  Merge: 25d5278 3330c81
+[32m|[m [34m|[m [35m|[m Author: Junior Fracarolli <vectra.ass.tecnica@gmail.com>
+[32m|[m [34m|[m [35m|[m Date:   Thu Dec 4 18:23:35 2025 -0300
+[32m|[m [34m|[m [35m|[m 
+[32m|[m [34m|[m [35m|[m     Merge branch 'dev' of https://github.com/Giovanni572/PuraEssencia into dev
+[32m|[m [34m|[m [35m|[m 
+[32m|[m [34m|[m * [33mcommit 3330c81266102cf89a4cfc93e1e2eec13bea3c5b[m
+[32m|[m [34m|[m [35m|[m Author: Fabio Evangelista <evangelistafabio985@gmail.com>
+[32m|[m [34m|[m [35m|[m Date:   Thu Dec 4 17:38:38 2025 -0200
+[32m|[m [34m|[m [35m|[m 
+[32m|[m [34m|[m [35m|[m     atualizando estilo site
+[32m|[m [34m|[m [35m|[m 
+[32m|[m * [35m|[m [33mcommit 25d52783bda3a081bb98086d77bd326e780b6a54[m
+[32m|[m [35m|[m[35m/[m  Author: Junior Fracarolli <vectra.ass.tecnica@gmail.com>
+[32m|[m [35m|[m   Date:   Thu Dec 4 17:59:04 2025 -0300
+[32m|[m [35m|[m   
+[32m|[m [35m|[m        criando liick icones
+[32m|[m [35m|[m 
+* [35m|[m [33mcommit d771b9ae8a16d8eee07a0cce4124b707a9d949a4[m
+[35m|[m[35m/[m  Author: luevangelista0-art <luevangelista0@gmail.com>
+[35m|[m   Date:   Thu Dec 4 17:42:19 2025 -0300
+[35m|[m   
+[35m|[m       Estilizacção do css, parte de Luísa
+[35m|[m 
+* [33mcommit f047ef5afc8ca00d1a59038901aa222ebaf9ea1f[m
+[35m|[m Author: Fabio Evangelista <evangelistafabio985@gmail.com>
+[35m|[m Date:   Wed Dec 3 20:17:00 2025 -0200
+[35m|[m 
+[35m|[m     atualização de cards
+[35m|[m 
+* [33mcommit 752088e99ea30ca91f71a7ee1554729387fc07b0[m
+[35m|[m Author: Fabio Evangelista <evangelistafabio985@gmail.com>
+[35m|[m Date:   Tue Dec 2 19:27:07 2025 -0200
+[35m|[m 
+[35m|[m     incluindo imagens no site
+[35m|[m 
+* [33mcommit f493bc0148bb581d3b28f47a98468e2d6af00535[m
+[35m|[m Author: Fabio Evangelista <evangelistafabio985@gmail.com>
+[35m|[m Date:   Mon Dec 1 19:32:06 2025 -0200
+[35m|[m 
+[35m|[m     estilização de projeto
+[35m|[m 
+* [33mcommit 7af121e9d35b98471e4614b51b3089f22b6cb509[m
+[35m|[m Author: Fabio Evangelista <evangelistafabio985@gmail.com>
+[35m|[m Date:   Sun Nov 30 22:23:12 2025 -0200
+[35m|[m 
+[35m|[m     atualizando layout da pagina
+[35m|[m 
+* [33mcommit 9093081fcf8fb180b5165ba33fe05d52cbe7a537[m
+[35m|[m Author: Fabio Evangelista <evangelistafabio985@gmail.com>
+[35m|[m Date:   Sat Nov 29 21:13:14 2025 -0200
+[35m|[m 
+[35m|[m     estilizando layout
+[35m|[m 
+* [33mcommit 906359285c431520425a09a148cc8943fb76fc6b[m
+[35m|[m Author: Fabio Evangelista <evangelistafabio985@gmail.com>
+[35m|[m Date:   Sat Nov 29 18:12:34 2025 -0200
+[35m|[m 
+[35m|[m     criando tela de login e tela listar produtos
+[35m|[m 
+* [33mcommit 7143ea7799e7426372e6497f560c80a5a2cdaf68[m
+[35m|[m Author: Fabio Evangelista <evangelistafabio985@gmail.com>
+[35m|[m Date:   Sat Nov 29 17:19:55 2025 -0200
+[35m|[m 
+[35m|[m     injeção de dependencias
+[35m|[m 
+* [33mcommit 7d0bb16e6f61c2013ecbaef50dbc040710aa28e1[m
+[35m|[m Author: Fabio Evangelista <evangelistafabio985@gmail.com>
+[35m|[m Date:   Mon Nov 24 23:30:27 2025 -0200
+[35m|[m 
+[35m|[m     criando string de conexao appsettings.json
+[35m|[m 
+* [33mcommit bd358c417571c34b3cabc8283a6623ce3ad08e1a[m
+[35m|[m Author: Fabio Evangelista <evangelistafabio985@gmail.com>
+[35m|[m Date:   Mon Nov 24 23:21:00 2025 -0200
+[35m|[m 
+[35m|[m     codificando controller usuario
+[35m|[m 
+* [33mcommit 221dc444675f58177aaf6b708685d06f66c13806[m
+[35m|[m Author: Fabio Evangelista <evangelistafabio985@gmail.com>
+[35m|[m Date:   Mon Nov 24 22:50:32 2025 -0200
+[35m|[m 
+[35m|[m     criando e codificando a model usuario
+[35m|[m 
+* [33mcommit 6d30d396caecaca05d28f0bac1a0df5b69c36f7d[m
+[35m|[m Author: Fabio Evangelista <evangelistafabio985@gmail.com>
+[35m|[m Date:   Mon Nov 24 22:33:10 2025 -0200
+[35m|[m 
+[35m|[m     criando script banco de dados
+[35m|[m 
+* [33mcommit 1d80dc4a22fc14a2f156bfb3ce1360d6991f67ee[m
+[35m|[m Author: Giovanni GAU <giovannigau3@gmail.com>
+[35m|[m Date:   Mon Nov 17 20:40:22 2025 -0300
+[35m|[m 
+[35m|[m      Criando as controller models e Repositorios
+[35m|[m 
+* [33mcommit d222dab6c098360984eefcdfa32bc43c352148b8[m
+  Author: Giovanni GAU <giovannigau3@gmail.com>
+  Date:   Mon Nov 17 20:12:57 2025 -0300
+  
+      Criaçao da pasta de arquivo do Projeto

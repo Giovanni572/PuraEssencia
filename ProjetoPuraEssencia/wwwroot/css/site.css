@@ -441,25 +441,22 @@ header, .navbar {
 }
 @media (max-width: 768px) {
     body {
-        /* A altura da sua logo é 50px no mobile. Usamos 60px para dar uma pequena folga. */
+        
         padding-top: 50px !important;
     }
 }
-/* Correção de Posicionamento do Menu Recolhível (Mobile) */
-/* Aplica-se em telas menores que 576px, onde o menu recolhe. */
-/* CORREÇÃO DE POSICIONAMENTO DO MENU RECOLHÍVEL (MOBILE) */
-/* Aplica-se em telas menores que 576px (ponto de quebra padrão do Bootstrap para o navbar-expand-sm) */
+
 @media (max-width: 575.98px) {
 
     .navbar-collapse {
-        /* Garante o posicionamento absoluto em relação ao seu pai (a tag <nav>) */
+        
         position: absolute !important;
-        /* 💡 Essencial: Força o menu a começar 100% abaixo da altura da nav principal. */
+        
         top: 100% !important;
-        /* Garante que o menu comece na borda esquerda e ocupe 100% da largura. */
+        
         width: 100% !important;
         left: 0 !important;
-        /* Define um z-index alto, mas ligeiramente abaixo do header principal (que tem z-index 1030). */
+       
         z-index: 1029 !important;
         background-color: #3A5D3E !important;
     }
@@ -467,11 +464,10 @@ header, .navbar {
     /* Estiliza os links internos para serem legíveis no menu que se abre. */
     .navbar-nav .nav-item .nav-link {
         padding: 10px 15px !important;
-        color: white !important; /* Cor branca para o link no menu aberto */
+        color: white !important; 
     }
 
-    /* Regra de Z-Index adicional para garantir que a NAV principal fique por cima. */
-    /* Você pode manter o z-index da nav em 1030 no seu CSS padrão, mas reforçamos aqui. */
+    
     .navbar {
         z-index: 1030 !important;
     }
