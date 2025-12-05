@@ -1,7 +1,6 @@
 ﻿
 
 html {
-    /* Altura total e remover regras antigas de position */
     height: 100%;
 }
 
@@ -14,15 +13,16 @@ body {
     /* CHAVES FLEXBOX PARA EMPURRAR O FOOTER */
     display: flex;
     flex-direction: column;
-    min-height: 100vh; /* Garante que o corpo tenha no mínimo a altura da tela */
+    min-height: 100vh; 
     margin: 0;
     padding-top:90px;
+
 }
 header, .navbar {
     position: fixed;
     top: 0;
     width: 100%;
-    z-index: 1030; /* Um valor alto para garantir que fique por cima */
+    z-index: 1030; 
 }
 
 
@@ -33,7 +33,7 @@ nav.navbar a.nav-link:hover {
 
 
 .main {
-    flex-grow: 1; /* O QUE FAZ O FOOTER SER EMPURRADO PARA O FUNDO */
+    flex-grow: 1; 
 }
 
 h2 {
@@ -45,7 +45,7 @@ h2 {
     /* O HTML já define background-color:#D4AF37 inline */
 }
 
-/* --- Cards de Produto (E-commerce Style) --- */
+
 .card {
     border: none; /* Remove a borda padrão do bootstrap */
     border-radius: 10px;
@@ -55,7 +55,7 @@ h2 {
 }
 
     .card:hover {
-        transform: translateY(-5px); /* Efeito sutil ao passar o mouse */
+        transform: translateY(-5px);
         box-shadow: 0 6px 20px rgba(0,0,0,0.1);
     }
 
@@ -65,7 +65,7 @@ h2 {
 }
 
 .card-title {
-    color: #3A5D3E; /* Cor da marca para os títulos dos produtos */
+    color: #3A5D3E; 
     font-weight: bold;
 }
 
@@ -84,7 +84,7 @@ h2 {
     display: block;
     font-size: 1.5rem;
     font-weight: 700;
-    color: #d9534f; /* Cor de destaque para o preço principal (ex: vermelho/promoção) */
+    color: #d9534f; 
 }
 
 .payment-options {
@@ -92,14 +92,14 @@ h2 {
     color: #6c757d;
 }
 
-/* Espaçamento entre as linhas de cards */
+
 .row.g-4 {
     margin-bottom: 40px;
 }
 
 
 main, .content-wrapper {
-    padding-top: 0 !important; /* Use !important se necessário */
+    padding-top: 0 !important; 
 }
 
 .navbar {
@@ -114,14 +114,7 @@ main, .content-wrapper {
 }
 
 
-/* Seu código atual (mantido) */
-/* ========================================= */
-/* 1. ESTILIZAÇÃO BASE E CONTÊINER           */
-/* ========================================= */
 
-/* ========================================= */
-/* 1. ESTILIZAÇÃO BASE E CONTÊINER           */
-/* ========================================= */
 
 .site-footer {
     background-color: #3A5D3E;
@@ -144,10 +137,7 @@ main, .content-wrapper {
 }
 
 
-/* ========================================= */
-/* 2. AJUSTE DE PROPORÇÃO FLEXBOX            */
-/* (36% | 28% | 36%)                         */
-/* ========================================= */
+
 
 /* Colunas Laterais (Esquerda e Direita): 36% de largura base */
 .footer-column {
@@ -164,9 +154,7 @@ main, .content-wrapper {
 }
 
 
-/* ========================================= */
-/* 3. ALINHAMENTO AO CENTRO (CORREÇÃO FINAL) */
-/* ========================================= */
+
 
 /* Esta regra centraliza todo o texto e o bloco da lista na coluna da esquerda */
 .footer-esquerdo {
@@ -181,20 +169,14 @@ main, .content-wrapper {
 /* Garante que o bloco da lista (UL) seja centralizado na coluna esquerda */
 .footer-esquerdo ul {
     display: inline-block;
-    /* Mantemos o texto da lista alinhado à esquerda dentro do bloco, mas o bloco fica centralizado pelo "text-align: center" no pai */
     text-align: left;
     padding: 0;
     list-style: none;
 }
 
-
-/* ========================================= */
-/* 4. ESTILOS DE CONTEÚDO (MANTIDOS/OTIMIZADOS) */
-/* ========================================= */
-
-/* Garante que o H3/H4 (título) seja alinhado pelo text-align: center; */
+/* Garante que o H3/H4 (título) seja centralizado em DESKTOP (margin-left: 0) */
 .footer-column h3, .footer-column h4 {
-    margin-left: 200px;
+    margin-left: 0; 
     color: #ecf0f1;
     font-size: 1.2em;
     margin-bottom: 15px;
@@ -207,8 +189,7 @@ main, .content-wrapper {
     color: #ecf0f1;
     text-decoration: none;
     transition: color 0.3s;
-    margin-right: 190px;
-
+    margin-right: 0; 
 }
 
     .footer-esquerdo ul li a:hover {
@@ -216,14 +197,16 @@ main, .content-wrapper {
     }
 
 
-.footer-central p,{}
+.footer-central p, {
+}
+
 .footer-direito p,
 .footer-direito .social-links a {
     line-height: 1.6;
     color: #ecf0f1;
     text-decoration: none;
     transition: color 0.3s;
-    margin-left: 200px;
+    margin-left: 0; 
 }
 
 .footer-central .social-links {
@@ -247,40 +230,96 @@ main, .content-wrapper {
     .footer-central .social-links img {
         width: 30px;
         height: 35px;
-       
         object-fit: contain;
     }
 
 .footer-direito .social-links a:hover {
     color: #ecf0f1;
-
 }
 
 
 .footer-bottom {
-   
     text-align: center;
     padding-top: 0px;
     margin-top: 20px;
 }
 
 
-/* ========================================= */
-/* 5. RESPONSIVIDADE (MOBILE)                */
-/* ========================================= */
 
 @media (max-width: 768px) {
-
+    /* 1. Mudar o layout principal para empilhamento vertical */
     .footer-container {
         flex-direction: column;
         text-align: center;
+        /* Remova o gap de 10px em mobile, se desejar mais proximidade */
+        gap: 0;
     }
 
+    /* 2. Fazer as colunas ocuparem 100% da largura */
     .footer-column, .footer-central {
         flex: 1 1 100%;
-        margin-bottom: 20px;
+        margin-bottom: 30px; 
         padding: 0;
+        min-width: unset; 
     }
+
+   
+
+    /* Coluna Esquerda: Links */
+    .footer-esquerdo {
+        text-align: center; /* Centraliza o bloco da UL */
+    }
+
+        .footer-esquerdo ul {
+            /* Garante que a UL se comporte como um bloco inline para ser centralizada */
+            display: inline-block;
+            text-align: left; /* Mantém o texto da lista alinhado à esquerda DENTRO do bloco */
+        }
+            
+            .footer-esquerdo ul li a {
+                margin-right: 0; 
+                display: block; 
+                padding: 5px 0;
+            }
+
+
+    /* Coluna Central: Redes Sociais */
+    .footer-central {
+        text-align: center;
+    }
+
+        .footer-central .social-links {
+            /* Força a centralização dos ícones, mantendo o display:flex */
+            justify-content: center;
+        }
+            /* ANULAR A MARGEM PROBLEMÁTICA */
+            .footer-central .social-links img {
+                margin-left: 0; /* Anula o margin-left */
+            }
+
+
+    
+    .footer-direito {
+        text-align: center; /* Garante que o endereço fique centralizado */
+    }
+    
+    .footer-column h3, .footer-column h4 {
+        margin-left: 0; 
+        border-bottom: none; 
+        padding-bottom: 0;
+    }
+
+    .footer-direito p {
+        margin-left: 0; 
+        
+    }
+
+    /* 4. Opcional: Adicionar Padding superior e inferior para melhorar o visual */
+    .site-footer {
+        padding: 20px 0 10px;
+    }
+
+    
 }
 .btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
     box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
@@ -301,35 +340,77 @@ main, .content-wrapper {
         height: 90px;
     }
 
-/* ⚠️ Adiciona a responsividade para a imagem (essencial para mobile) */
+header, .navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1030;
+}
+
+/* Garante que o conteúdo comece abaixo do header em telas pequenas */
 @media (max-width: 768px) {
-    .container-fluid img {
-        height: 50px !important; /* Altura reduzida para celular */
-        width: 50px !important;
+    body {
+        padding-top: 50px !important;
     }
 }
-@media (max-width: 575.98px) {
-    .navbar .container-fluid {
-        position: relative !important;
-    }
-}
+
+/* ⚠️ Adiciona a responsividade para a imagem (essencial para mobile) */
+/* REGRA DE ESTILO BASE */
 .container-head {
     background-color: #3A5D3E;
 }
 
-/* SEÇÃO DA LABEL DE PROMOÇÃO */
-/* ========================================= */
 
-/* 1. Estilo Padrão (Desktop/Telas Maiores) */
-/* SEÇÃO DA LABEL DE PROMOÇÃO: Margem e Estilo Unificados */
-/* ======================================================= */
 
-/* 1. Estilo Básico (Definindo Largura e Aparência) */
+@media (max-width: 575.98px) {
+    .navbar .container-fluid {
+        position: relative !important;
+    }
+
+    
+    .navbar-collapse {
+        position: absolute !important;
+        top: 100% !important; /* Faz o menu abrir abaixo da altura da barra */
+        width: auto !important; /* Largura da coluna */
+        left: auto !important; /* Desabilita o alinhamento esquerdo */
+        right: 0 !important; /* ANCORA O MENU NA DIREITA */
+        z-index: 1029 !important;
+        /* Usando a cor verde do header: */
+        background-color: #3A5D3E !important;
+        padding-right: 15px;
+        padding-left: 15px;
+        border-bottom: 2px solid #D4AF37;
+    }
+
+    
+    /* Estiliza a lista UL dentro do menu */
+    .navbar-collapse .navbar-nav {
+        /* Garante que os itens fiquem alinhados */
+        align-items: flex-end;
+        /* Alinha o texto à direita dentro da coluna */
+        text-align: right;
+        width: 100%; /* Ocupa a largura da coluna de 250px */
+        padding-top: 5px;
+        padding-bottom: 5px;
+    }
+
+    .navbar-nav .nav-item .nav-link {
+        padding: 5px 0 !important; /* Espaçamento vertical menor */
+        color: white !important;
+        width: 100%;
+        display: block;
+    }
+
+    /* Regra de Z-index, se estiver faltando */
+    .navbar {
+        z-index: 1030 !important;
+    }
+}
+
 .promocao-label {
-    /* Largura e fonte que você desejava para desktop */
+    
     width: 500px;
     font-size: 30px;
-    /* Estilos visuais */
     text-align: center;
     background-color: darkgray;
     border-radius: 20px;
@@ -394,4 +475,29 @@ main, .content-wrapper {
     .navbar {
         z-index: 1030 !important;
     }
+}
+
+@media (max-width: 768px) {
+    /* ... (outras regras de mobile que você já tem) ... */
+
+    /* 1. Redução da Margem Superior da Promoção */
+    .promocao {
+        /* Já estava em 20px, que é um bom valor. O !important garante que ele prevaleça sobre os 50px do desktop. */
+        margin-top: 20px !important;
+    }
+
+    /* 2. Remoção das Margens do H2 em Mobile */
+    h2 {
+        /* Remove a margem superior de 40px, que se somava aos <br><br> */
+        margin-top: 15px !important; /* Mantenha uma margem pequena para separar */
+        margin-bottom: 10px !important;
+    }
+
+    /* 3. Ajuste do Container da Main/Corpo */
+    /* Garante que o conteúdo comece imediatamente após o header fixo. */
+    body {
+        padding-top: 50px !important;
+    }
+
+    /* ... (restante das suas regras de mobile) ... */
 }
