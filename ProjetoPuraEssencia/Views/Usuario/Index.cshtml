@@ -1,0 +1,54 @@
+﻿@model IEnumerable<ProjetoPuraEssencia.Models.Usuario>
+
+
+
+<table class="table custom-table">
+	<thead>
+		<tr>
+			<th>
+				@Html.DisplayNameFor(Model => Model.id_usuario)
+			</th>
+			<th>
+				@Html.DisplayNameFor(Model => Model.nome)
+			</th>
+			<th>
+				@Html.DisplayNameFor(Model => Model.telefone)
+			</th>
+			<th>
+				@Html.DisplayNameFor(Model => Model.email)
+			</th>
+			<th>
+				@Html.DisplayNameFor(Model => Model.tipo)
+			</th>
+			<th class="text-center">Ação</th>
+		</tr>
+	</thead>
+	<tbody>
+		@foreach (var item in Model)
+		{
+			<tr>
+				<td>
+					@Html.DisplayFor(modelItem => item.id_usuario)
+				</td>
+				<td>
+					@Html.DisplayFor(modelItem => item.nome)
+				</td>
+				<td>
+					@Html.DisplayFor(modelItem => item.telefone)
+				</td>
+				<td>
+					@Html.DisplayFor(modelItem => item.email)
+				</td>
+				<td>
+					@Html.DisplayFor(modelItem => item.tipo)
+				</td>
+				<td class="text-center">
+					<a asp-controller="Usuario" asp-action="EditarUsuario" asp-route-id="@item.id_usuario" class="btn btn-sm btn-success">Editar</a>
+					<span></span>
+					<a asp-controller="Usuario" asp-action="ExcluirUsuario" asp-route-id="@item.id_usuario"
+					   onclick="return confirm('Deseja realmente Excluir este item?');" class="btn btn-sm btn-danger">Excluir</a>
+				</td>
+			</tr>
+		}
+	</tbody>
+</table>
