@@ -28,7 +28,7 @@ namespace ProjetoPuraEssencia.Controllers
             if (usuario != null && usuario.Senha == senha)
             {
                 // Lógica de autenticação bem-sucedida
-                return RedirectToAction("ListarProduto", "Produto");
+                return RedirectToAction("Login","ListarProduto");
             }
             // Lógica de autenticação falhou
             ModelState.AddModelError("", "Email ou senha Inválidos.");

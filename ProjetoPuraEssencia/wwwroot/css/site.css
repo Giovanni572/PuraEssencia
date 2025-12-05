@@ -6,7 +6,7 @@ html {
 
 header {
     background-color: #3A5D3E;
-    margin-bottom:0; !important;
+    margin-bottom:0 !important;
 }
 
 body {
@@ -197,8 +197,7 @@ main, .content-wrapper {
     }
 
 
-.footer-central p, {
-}
+
 
 .footer-direito p,
 .footer-direito .social-links a {
