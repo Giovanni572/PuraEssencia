@@ -1,40 +1,67 @@
-﻿
-
-html {
+﻿html {
     height: 100%;
-}
-
-header {
-    background-color: #3A5D3E;
-    margin-bottom:0 !important;
 }
 
 body {
     /* CHAVES FLEXBOX PARA EMPURRAR O FOOTER */
     display: flex;
     flex-direction: column;
-    min-height: 100vh; 
+    min-height: 100vh;
     margin: 0;
-    padding-top:90px;
-
+    padding-top: 90px;
+    font-size:16px;
 }
+
 header, .navbar {
+    background-color: #3A5D3E;
     position: fixed;
     top: 0;
     width: 100%;
-    z-index: 1030; 
+    z-index: 1030;
+    margin-bottom: 0 !important;
+    padding-bottom: 0 !important;
 }
-
-
-
-nav.navbar a.nav-link:hover {
-    color: #D4AF37 !important; /* Dourado ao passar o mouse */
-}
-
 
 .main {
-    flex-grow: 1; 
+    flex-grow: 1; /* Empurra o footer */
 }
+
+.container-fluid {
+    background-color: #3A5D3E;
+    margin: 0;
+    padding: 0;
+    font-weight: bold;
+}
+
+.container-head {
+    background-color: #3A5D3E;
+}
+
+.container-fluid img {
+    width: auto;
+    height: 90px;
+}
+
+
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+    box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+nav.navbar a.nav-link:hover {
+    color: #D4AF37 !important;
+}
+
+main, .content-wrapper {
+    padding-top: 0 !important;
+}
+
+
+.carousel {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+}
+
+
 
 h2 {
     margin-top: 40px;
@@ -42,16 +69,16 @@ h2 {
     padding: 10px;
     border-radius: 5px;
     color: #333;
-    /* O HTML já define background-color:#D4AF37 inline */
 }
 
 
 .card {
-    border: none; /* Remove a borda padrão do bootstrap */
+    border: none;
     border-radius: 10px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.05); /* Sombra suave para efeito de profundidade */
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    overflow: hidden; /* Garante que a imagem respeite o border-radius */
+    overflow: hidden;
+   
 }
 
     .card:hover {
@@ -59,18 +86,17 @@ h2 {
         box-shadow: 0 6px 20px rgba(0,0,0,0.1);
     }
 
-
 .card-body {
     padding: 20px;
 }
 
 .card-title {
-    color: #3A5D3E; 
+    color: #3A5D3E;
     font-weight: bold;
 }
 
 .card-text {
-    font-size: 0.9rem;
+    font-size: 1.1rem;
     color: #6c757d;
 }
 
@@ -84,7 +110,7 @@ h2 {
     display: block;
     font-size: 1.5rem;
     font-weight: 700;
-    color: #d9534f; 
+    color: #d9534f;
 }
 
 .payment-options {
@@ -92,25 +118,24 @@ h2 {
     color: #6c757d;
 }
 
-
 .row.g-4 {
     margin-bottom: 40px;
 }
 
 
-main, .content-wrapper {
-    padding-top: 0 !important; 
+.promocao {
+    margin-top: 50px; 
 }
 
-.navbar {
-    margin-bottom: 0 !important;
-    padding-bottom: 0 !important;
-}
-
-/* Garante que o carrossel não comece com espaçamento superior */
-.carousel {
-    margin-top: 0 !important;
-    padding-top: 0 !important;
+.promocao-label {
+    width: 500px;
+    font-size: 30px;
+    text-align: center;
+    background-color: darkgray;
+    border-radius: 20px;
+    padding: 15px;
+    display: block;
+    color: #333;
 }
 
 
@@ -124,7 +149,6 @@ main, .content-wrapper {
     width: 100%;
 }
 
-
 .footer-container {
     max-width: 1200px;
     margin: 0 auto;
@@ -137,16 +161,12 @@ main, .content-wrapper {
 }
 
 
-
-
-/* Colunas Laterais (Esquerda e Direita): 36% de largura base */
 .footer-column {
     flex: 1 1 36%;
     width: auto;
     min-width: 0;
 }
 
-/* Coluna Central: 28% de largura base */
 .footer-central {
     flex: 1 1 28%;
     width: auto;
@@ -154,29 +174,20 @@ main, .content-wrapper {
 }
 
 
-
-
-/* Esta regra centraliza todo o texto e o bloco da lista na coluna da esquerda */
-.footer-esquerdo {
+.footer-esquerdo, .footer-direito {
     text-align: center;
 }
 
-/* Esta regra centraliza o título (h4) e o endereço na coluna da direita */
-.footer-direito {
-    text-align: center;
-}
+    .footer-esquerdo ul { 
+        display: inline-block;
+        text-align: left;
+        padding: 0;
+        list-style: none;
+    }
 
-/* Garante que o bloco da lista (UL) seja centralizado na coluna esquerda */
-.footer-esquerdo ul {
-    display: inline-block;
-    text-align: left;
-    padding: 0;
-    list-style: none;
-}
 
-/* Garante que o H3/H4 (título) seja centralizado em DESKTOP (margin-left: 0) */
 .footer-column h3, .footer-column h4 {
-    margin-left: 0; 
+    margin-left: 0;
     color: #ecf0f1;
     font-size: 1.2em;
     margin-bottom: 15px;
@@ -184,20 +195,16 @@ main, .content-wrapper {
     padding-bottom: 5px;
 }
 
-
 .footer-esquerdo ul li a {
     color: #ecf0f1;
     text-decoration: none;
     transition: color 0.3s;
-    margin-right: 0; 
+    margin-right: 0;
 }
 
     .footer-esquerdo ul li a:hover {
         color: #ecf0f1;
     }
-
-
-
 
 .footer-direito p,
 .footer-direito .social-links a {
@@ -205,7 +212,7 @@ main, .content-wrapper {
     color: #ecf0f1;
     text-decoration: none;
     transition: color 0.3s;
-    margin-left: 0; 
+    margin-left: 0;
 }
 
 .footer-central .social-links {
@@ -218,13 +225,11 @@ main, .content-wrapper {
     margin-top: 10px;
 }
 
-
     .footer-central .social-links p {
         width: 100%;
         text-align: center;
         margin-bottom: 10px;
     }
-
 
     .footer-central .social-links img {
         width: 30px;
@@ -236,7 +241,6 @@ main, .content-wrapper {
     color: #ecf0f1;
 }
 
-
 .footer-bottom {
     text-align: center;
     padding-top: 0px;
@@ -246,119 +250,66 @@ main, .content-wrapper {
 
 
 @media (max-width: 768px) {
-    /* 1. Mudar o layout principal para empilhamento vertical */
+    /* Layout Geral e Espaçamento */
+    body {
+        padding-top: 50px !important;
+    }
+
+    h2 {
+        margin-top: 15px !important;
+        margin-bottom: 10px !important;
+    }
+
+    .promocao {
+        margin-top: 20px !important;
+    }
+
+    .promocao-label {
+        width: 95% !important;
+        font-size: 16px !important;
+        padding: 10px !important;
+    }
+
+    /* Footer Responsivo (Colunas em Pilha) */
     .footer-container {
         flex-direction: column;
         text-align: center;
-        /* Remova o gap de 10px em mobile, se desejar mais proximidade */
         gap: 0;
     }
 
-    /* 2. Fazer as colunas ocuparem 100% da largura */
     .footer-column, .footer-central {
         flex: 1 1 100%;
-        margin-bottom: 30px; 
+        margin-bottom: 30px;
         padding: 0;
-        min-width: unset; 
+        min-width: unset;
     }
 
-   
-
-    /* Coluna Esquerda: Links */
-    .footer-esquerdo {
-        text-align: center; /* Centraliza o bloco da UL */
-    }
-
-        .footer-esquerdo ul {
-            /* Garante que a UL se comporte como um bloco inline para ser centralizada */
-            display: inline-block;
-            text-align: left; /* Mantém o texto da lista alinhado à esquerda DENTRO do bloco */
-        }
-            
-            .footer-esquerdo ul li a {
-                margin-right: 0; 
-                display: block; 
-                padding: 5px 0;
-            }
-
-
-    /* Coluna Central: Redes Sociais */
-    .footer-central {
-        text-align: center;
-    }
-
-        .footer-central .social-links {
-            /* Força a centralização dos ícones, mantendo o display:flex */
-            justify-content: center;
-        }
-            /* ANULAR A MARGEM PROBLEMÁTICA */
-            .footer-central .social-links img {
-                margin-left: 0; /* Anula o margin-left */
-            }
-
-
-    
-    .footer-direito {
-        text-align: center; /* Garante que o endereço fique centralizado */
-    }
-    
-    .footer-column h3, .footer-column h4 {
-        margin-left: 0; 
-        border-bottom: none; 
-        padding-bottom: 0;
-    }
-
-    .footer-direito p {
-        margin-left: 0; 
-        
-    }
-
-    /* 4. Opcional: Adicionar Padding superior e inferior para melhorar o visual */
     .site-footer {
         padding: 20px 0 10px;
     }
 
-    
-}
-.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
-    box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
-}
-
-
-
-.container-fluid {
-    background-color: #3A5D3E;
-    margin: 0;
-    padding: 0;
-    font-weight: bold;
-}
-
-    .container-fluid img {
-        /* Altura da imagem no Desktop (Mantenha 90px para telas grandes) */
-        width: auto;
-        height: 90px;
+    /* Correções de Alinhamento do Footer em Mobile */
+    .footer-esquerdo ul {
+        display: inline-block;
+        text-align: left;
     }
 
-header, .navbar {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    z-index: 1030;
-}
+        .footer-esquerdo ul li a {
+            margin-right: 0;
+            display: block;
+            padding: 5px 0;
+        }
 
-/* Garante que o conteúdo comece abaixo do header em telas pequenas */
-@media (max-width: 768px) {
-    body {
-        padding-top: 50px !important;
+    .footer-column h3, .footer-column h4 {
+        margin-left: 0;
+        border-bottom: none;
+        padding-bottom: 0;
+    }
+
+    .footer-direito p {
+        margin-left: 0;
     }
 }
-
-/* ⚠️ Adiciona a responsividade para a imagem (essencial para mobile) */
-/* REGRA DE ESTILO BASE */
-.container-head {
-    background-color: #3A5D3E;
-}
-
 
 
 @media (max-width: 575.98px) {
@@ -366,133 +317,36 @@ header, .navbar {
         position: relative !important;
     }
 
-    
+    /* 1. Versão: Coluna Flutuante à Direita (Com padding extra) */
     .navbar-collapse {
         position: absolute !important;
-        top: 100% !important; /* Faz o menu abrir abaixo da altura da barra */
-        width: auto !important; /* Largura da coluna */
-        left: auto !important; /* Desabilita o alinhamento esquerdo */
-        right: 0 !important; /* ANCORA O MENU NA DIREITA */
+        top: 100% !important;
+        width: auto !important; /* Mantenho auto, mas 250px seria melhor */
+        left: auto !important;
+        right: 0 !important;
         z-index: 1029 !important;
-        /* Usando a cor verde do header: */
         background-color: #3A5D3E !important;
         padding-right: 15px;
         padding-left: 15px;
         border-bottom: 2px solid #D4AF37;
     }
 
-    
-    /* Estiliza a lista UL dentro do menu */
-    .navbar-collapse .navbar-nav {
-        /* Garante que os itens fiquem alinhados */
-        align-items: flex-end;
-        /* Alinha o texto à direita dentro da coluna */
-        text-align: right;
-        width: 100%; /* Ocupa a largura da coluna de 250px */
-        padding-top: 5px;
-        padding-bottom: 5px;
-    }
+        .navbar-collapse .navbar-nav {
+            align-items: flex-end;
+            text-align: right;
+            width: 100%;
+            padding-top: 5px;
+            padding-bottom: 5px;
+        }
 
     .navbar-nav .nav-item .nav-link {
-        padding: 5px 0 !important; /* Espaçamento vertical menor */
+        padding: 5px 0 !important;
         color: white !important;
         width: 100%;
         display: block;
     }
 
-    /* Regra de Z-index, se estiver faltando */
     .navbar {
         z-index: 1030 !important;
     }
-}
-
-.promocao-label {
-    
-    width: 500px;
-    font-size: 30px;
-    text-align: center;
-    background-color: darkgray;
-    border-radius: 20px;
-    padding: 15px;
-    display: block;
-    color: #333;
-}
-
-
-.promocao {
-    margin-top: 50px;
-}
-
-
-
-@media (max-width: 768px) {
-    
-    .promocao {
-        margin-top: 20px !important;
-    }
-
-    
-    .promocao-label {
-        width: 95% !important;
-        font-size: 16px !important;
-        padding: 10px !important;
-    }
-}
-@media (max-width: 768px) {
-    body {
-        
-        padding-top: 50px !important;
-    }
-}
-
-@media (max-width: 575.98px) {
-
-    .navbar-collapse {
-        
-        position: absolute !important;
-        
-        top: 100% !important;
-        
-        width: 100% !important;
-        left: 0 !important;
-       
-        z-index: 1029 !important;
-        background-color: #3A5D3E !important;
-    }
-
-    /* Estiliza os links internos para serem legíveis no menu que se abre. */
-    .navbar-nav .nav-item .nav-link {
-        padding: 10px 15px !important;
-        color: white !important; 
-    }
-
-    
-    .navbar {
-        z-index: 1030 !important;
-    }
-}
-
-@media (max-width: 768px) {
-    /* ... (outras regras de mobile que você já tem) ... */
-
-    /* 1. Redução da Margem Superior da Promoção */
-    .promocao {
-        /* Já estava em 20px, que é um bom valor. O !important garante que ele prevaleça sobre os 50px do desktop. */
-        margin-top: 20px !important;
-    }
-
-    /* 2. Remoção das Margens do H2 em Mobile */
-    h2 {
-        /* Remove a margem superior de 40px, que se somava aos <br><br> */
-        margin-top: 15px !important; /* Mantenha uma margem pequena para separar */
-        margin-bottom: 10px !important;
-    }
-
-    /* 3. Ajuste do Container da Main/Corpo */
-    /* Garante que o conteúdo comece imediatamente após o header fixo. */
-    body {
-        padding-top: 50px !important;
-    }
-
-    /* ... (restante das suas regras de mobile) ... */
 }

@@ -14,7 +14,7 @@ namespace ProjetoPuraEssencia.Repositorio
             using (var conexao = new MySqlConnection(_conexaoMysql)) 
             {
                 conexao.Open();
-                MySqlCommand cmd = new("select * from Usuario where email = @email", conexao);
+                MySqlCommand cmd = new("select * from Usuario where Email = @email", conexao);
                 cmd.Parameters.Add("email", MySqlDbType.VarChar).Value = email;
                 using (MySqlDataReader dr = cmd.ExecuteReader(CommandBehavior.CloseConnection))
                 {
@@ -28,11 +28,12 @@ namespace ProjetoPuraEssencia.Repositorio
                             Email = dr["Email"].ToString(),
                             Senha = dr["Senha"].ToString()
                         };
-                        return usuario;
+                        
                     }
+                    return usuario;
                 }
             }
-            return null;
+            
         }
     }
 }
