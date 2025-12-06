@@ -9,6 +9,7 @@ namespace ProjetoPuraEssencia.Models
         public int id_usuario { get; set; }
         [Display(Name = "Nome")]
         public string? nome { get; set; }
+        [Display(Name = "cpf")]
         public string? cpf { get; set; }
         [Display(Name = "E-mail")]
         public string? email { get; set; }

@@ -17,7 +17,7 @@ namespace ProjetoPuraEssencia.Repositorio
             {
                 conexao.Open();
 
-                MySqlCommand cmd = new("SELECT * FROM usuario WHERE email = @email", conexao);
+                MySqlCommand cmd = new("SELECT  id_usuario, nome, cpf, email, telefone, endereco, cep, senha, tipo  FROM usuario WHERE email = @email", conexao);
                 cmd.Parameters.Add("email", MySqlDbType.VarChar).Value = email;
 
                 using (MySqlDataReader dr = cmd.ExecuteReader(CommandBehavior.CloseConnection))
