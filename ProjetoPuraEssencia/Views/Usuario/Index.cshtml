@@ -1,13 +1,17 @@
 ﻿@model IEnumerable<ProjetoPuraEssencia.Models.Usuario>
 
 
+<link rel="stylesheet" href="~/css/ListaUsuario.css" />
+<body>
 
-<table class="table custom-table">
+
+<table class="table custom-table responsive-data-table">
 	<thead>
 		<tr>
 			<th>
 				@Html.DisplayNameFor(Model => Model.id_usuario)
 			</th>
+			
 			<th>
 				@Html.DisplayNameFor(Model => Model.nome)
 			</th>
@@ -27,28 +31,30 @@
 		@foreach (var item in Model)
 		{
 			<tr>
-				<td>
+				 
+				<td data-label="@Html.DisplayNameFor(Model => Model.id_usuario)">
 					@Html.DisplayFor(modelItem => item.id_usuario)
 				</td>
-				<td>
+				<td data-label="@Html.DisplayNameFor(Model => Model.nome)">
 					@Html.DisplayFor(modelItem => item.nome)
 				</td>
-				<td>
+				<td data-label="@Html.DisplayNameFor(Model => Model.telefone)">
 					@Html.DisplayFor(modelItem => item.telefone)
 				</td>
-				<td>
+				<td data-label="@Html.DisplayNameFor(Model => Model.email)">
 					@Html.DisplayFor(modelItem => item.email)
 				</td>
-				<td>
+				<td data-label="@Html.DisplayNameFor(Model => Model.tipo)">
 					@Html.DisplayFor(modelItem => item.tipo)
 				</td>
-				<td class="text-center">
+				<td data-label="Ação" class="text-center">
 					<a asp-controller="Usuario" asp-action="EditarUsuario" asp-route-id="@item.id_usuario" class="btn btn-sm btn-success">Editar</a>
 					<span></span>
 					<a asp-controller="Usuario" asp-action="ExcluirUsuario" asp-route-id="@item.id_usuario"
-					   onclick="return confirm('Deseja realmente Excluir este item?');" class="btn btn-sm btn-danger">Excluir</a>
+					   onclick="return confirm('Deseja realmente Excluir este item?');" class="btn btn-sm btn-danger">Excluir</a>
 				</td>
 			</tr>
 		}
 	</tbody>
 </table>
+</body>
